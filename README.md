@@ -2,3 +2,4 @@
 repository for internal hackathon. TEAM NAME - CODE MONGERZZ
 
 ppt added
+ocr model added
