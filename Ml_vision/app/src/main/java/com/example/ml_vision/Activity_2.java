@@ -26,6 +26,8 @@ import com.google.android.material.navigation.NavigationView;
 
 public class Activity_2 extends AppCompatActivity {
 
+    // this file is activity_2
+
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
     TextView result;
@@ -173,7 +175,6 @@ public class Activity_2 extends AppCompatActivity {
         {
             imageView.setImageURI(data.getData());
             image_r.setImageResource(R.drawable.api_result);
-            //******************//
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
