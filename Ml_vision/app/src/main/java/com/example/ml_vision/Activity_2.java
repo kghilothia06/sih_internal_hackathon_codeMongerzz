@@ -9,9 +9,12 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -20,14 +23,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.File;
+
 public class Activity_2 extends AppCompatActivity {
 
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
-    TextView result;
     ImageView imageView,image_r;
     Button upload, email;
     private DrawerLayout drawerLayout;
+    Uri imageUri = null;
+    File attachment;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
@@ -52,11 +58,10 @@ public class Activity_2 extends AppCompatActivity {
                 String recipientList = va;
                 String[] recipients = recipientList.split(",");
                 String subject ="Lab Reports";
-                String message = result.getText().toString();
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.putExtra(Intent.EXTRA_EMAIL, recipients);
                 intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                intent.putExtra(Intent.EXTRA_TEXT, message);
+                intent.putExtra(Intent.EXTRA_STREAM, imageUri);
                 intent.setType("message/rfc822");
                 startActivity(Intent.createChooser(intent, "Choose an email client"));
             }
@@ -169,8 +174,23 @@ public class Activity_2 extends AppCompatActivity {
         {
             imageView.setImageURI(data.getData());
             image_r.setImageResource(R.drawable.api_result);
+            imageUri = data.getData();
+            System.out.println("Path--->"+imageUri.toString());
+            attachment = new File(getPath(imageUri));
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public String getPath(Uri uri)
+    {
+        String[] projection = { MediaStore.Images.Media.DATA };
+        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
+        if (cursor == null) return null;
+        int column_index =             cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        String s=cursor.getString(column_index);
+        cursor.close();
+        return s;
     }
 
     @Override
