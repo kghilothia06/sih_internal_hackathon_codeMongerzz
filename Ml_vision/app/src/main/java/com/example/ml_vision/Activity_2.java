@@ -5,28 +5,22 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.material.navigation.NavigationView;
 
 public class Activity_2 extends AppCompatActivity {
-
-    // this file is activity_2
 
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
@@ -193,10 +187,4 @@ public class Activity_2 extends AppCompatActivity {
         super.finish();
         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
-
-//    @Override
-//    public void onBackPressed()
-//    {
-//        startActivity(new Intent(this, MainActivity.class));
-//    }
 }
