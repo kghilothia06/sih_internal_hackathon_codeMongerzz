@@ -15,9 +15,9 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".About" android:screenOrientation="portrait"/>
-        <activity android:name=".MyProfile" android:screenOrientation="portrait" />
-        <activity android:name=".Plots" android:screenOrientation="portrait" />
+        <activity android:name=".About" android:screenOrientation="portrait" android:parentActivityName=".Activity_2"/>
+        <activity android:name=".MyProfile" android:screenOrientation="portrait"  android:parentActivityName=".Activity_2"/>
+        <activity android:name=".Plots" android:screenOrientation="portrait"  android:parentActivityName=".Activity_2"/>
         <activity android:name=".Activity_2" android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
