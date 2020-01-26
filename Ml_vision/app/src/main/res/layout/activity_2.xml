@@ -3,7 +3,6 @@
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer">
@@ -52,7 +51,7 @@
         app:cornerRadius="10dp"
         app:icon="@drawable/newsletter"
         app:iconPadding="10dp"
-        app:iconTint="#536DFE"
+        app:iconTint="#EC407A"
         app:layout_constraintLeft_toLeftOf="@+id/uploadButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
