@@ -1,5 +1,7 @@
 # sih_internal_hackathon_codeMongerzz
-repository for internal hackathon. TEAM NAME - CODE MONGERZZ
+Repository for internal hackathon. 
+TEAM NAME - CODE MONGERZZ
 
-ppt added
-ocr model added
+-->PPT added
+-->OCR model added
+-->Android App Source Code Added
